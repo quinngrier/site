@@ -1,7 +1,8 @@
 stages:
-  - build
+  - stage1
 
 pages:
   artifacts: {paths: [public]}
   image: ubuntu
   script: [./build]
+  stage: stage1
