@@ -2,6 +2,5 @@
 
 set -euo pipefail
 
-rm -fr public
 mkdir public
 cp index.html public
