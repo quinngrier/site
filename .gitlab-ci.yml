@@ -1,7 +1,7 @@
+stages:
+  - build
+
 pages:
-  artifacts:
-    paths:
-      - public
-  script:
-    - mkdir public
-    - cp index.html public
+  artifacts: {paths: [public]}
+  image: ubuntu
+  script: [./build]
