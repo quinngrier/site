@@ -1,6 +1,6 @@
 #! /bin/bash -
 
-set -euo pipefail
+set -E -e -u -o pipefail || exit $?
 
 mkdir public
 cp index.html public
