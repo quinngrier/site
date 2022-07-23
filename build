@@ -1,14 +1,14 @@
 #! /bin/bash -
 
 set -E -e -u -o pipefail || exit $?
+shopt -s globstar nullglob
 
-mkdir public
-
-xs=$(git ls-files)
-
-for x in $xs; do
-  if [[ "$x" == */* ]]; then
-    mkdir -p "./${x%/*}"
+mkdir .public
+for x in **; do
+  if [[ -d "$x" ]]; then
+    mkdir ".public/$x"
+  else
+    cp "./$x" ".public/$x"
   fi
-  cp "./$x" public
 done
+mv -f .public public
