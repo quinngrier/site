@@ -3,4 +3,12 @@
 set -E -e -u -o pipefail || exit $?
 
 mkdir public
-cp index.html public
+
+xs=$(git ls-files)
+
+for x in $xs; do
+  if [[ "$x" == */* ]]; then
+    mkdir -p "./${x%/*}"
+  fi
+  cp "./$x" public
+done
