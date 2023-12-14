@@ -8,7 +8,7 @@
 # <https://creativecommons.org/publicdomain/zero/1.0/>.
 #
 
-gravatar.png: Makefile gravatar.svg
+gravatar-2048x2048.png: Makefile gravatar.svg
 	inkscape -w 2048 -h 2048 -e $@.tmp1 -z gravatar.svg
 	pngcrush -brute $@.tmp1 $@.tmp2
 	mv -f $@.tmp2 $@
