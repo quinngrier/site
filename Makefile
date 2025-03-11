@@ -9,7 +9,7 @@
 #
 
 gravatar-2048x2048.png: Makefile gravatar.svg
-	inkscape -w 2048 -h 2048 -e $@.tmp1 -z gravatar.svg
-	pngcrush -brute $@.tmp1 $@.tmp2
-	mv -f $@.tmp2 $@
-	-rm $@.tmp1
+	inkscape -w 2048 -h 2048 -o $@.tmp1.png gravatar.svg
+	pngcrush -brute $@.tmp1.png $@.tmp2.png
+	mv -f $@.tmp2.png $@
+	-rm $@.tmp1.png
