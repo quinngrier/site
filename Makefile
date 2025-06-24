@@ -13,13 +13,13 @@ all:
 all: gravatar-192x192.png
 gravatar-192x192.png: Makefile gravatar.svg
 	inkscape -w 192 -h 192 -o $@.tmp1.png gravatar.svg
-	pngcrush -brute $@.tmp1.png $@.tmp2.png
+	oxipng -Z -a -o max --out $@.tmp2.png --strip all $@.tmp1.png
 	mv -f $@.tmp2.png $@
 	-rm $@.tmp1.png
 
 all: gravatar-2048x2048.png
 gravatar-2048x2048.png: Makefile gravatar.svg
 	inkscape -w 2048 -h 2048 -o $@.tmp1.png gravatar.svg
-	pngcrush -brute $@.tmp1.png $@.tmp2.png
+	oxipng -Z -a -o max --out $@.tmp2.png --strip all $@.tmp1.png
 	mv -f $@.tmp2.png $@
 	-rm $@.tmp1.png
