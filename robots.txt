@@ -9,4 +9,8 @@
 #
 
 User-agent: *
-Disallow:
+
+# Cloudflare adds various /cdn-cgi/* endpoints to all managed domains.
+# They recommend disallowing them because it confuses web crawlers. See
+# <https://developers.cloudflare.com/fundamentals/reference/cdn-cgi-endpoint/>.
+Disallow: /cdn-cgi/
