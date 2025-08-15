@@ -10,7 +10,7 @@
 # <https://creativecommons.org/publicdomain/zero/1.0/>.
 #
 
-set -E -e -u -o pipefail || exit $?
+set -E -e -o pipefail -u || exit $?
 trap exit ERR
 
 aws s3 sync \
